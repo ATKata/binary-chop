@@ -13,6 +13,36 @@ public class BinaryChopTest {
     }
 
     @Test
+    public void emptyListAlwaysReturnsMinus1(){
+        assertThat(binaryChop.chop(0, new int[0])).isEqualTo(-1);
+    }
+
+    @Test
+    public void searchForSomthingThatIsntInArray(){
+        assertThat(binaryChop.chop(2, new int[]{1,3,4})).isEqualTo(-1);
+    }
+
+    @Test
+    public void firstItemInArrayIsAtPositionZero() {
+        assertThat(binaryChop.chop(1, new int[]{1})).isEqualTo(0);
+    }
+
+    @Test
+    public void itemIsFoundAtOriginalMiddlePosition(){
+        assertThat(binaryChop.chop(3, new int[]{1, 3, 5})).isEqualTo(1);
+    }
+
+    @Test
+    public void itemIsFoundAtNonOriginalMiddlePositionUpperHalf(){
+        assertThat(binaryChop.chop(5, new int[]{1, 3, 5})).isEqualTo(2);
+    }
+
+    @Test
+    public void itemIsFoundAtNonOriginalMiddlePositionLowerHalf(){
+        assertThat(binaryChop.chop(3, new int[]{1, 3, 5, 7})).isEqualTo(1);
+    }
+
+    @Test
     public void uberTest() {
         assertThat(binaryChop.chop(3, new int[]{})).isEqualTo(-1);
         assertThat(binaryChop.chop(3, new int[]{1})).isEqualTo(-1);
