@@ -1,4 +1,6 @@
 import java.util.Arrays;
+
+import java.util.Arrays;
 import java.util.Collection;
 
 public class BinaryChop {
@@ -22,15 +24,13 @@ public class BinaryChop {
         int result = -1;
         if(searchingFor > data[middle]) {
             result = chop(searchingFor, Arrays.copyOfRange(data, middle, data.length));
+            if ( result != -1 ) {
+                return middle + result;
+            }
         } else {
-            result = chop(searchingFor, Arrays.copyOfRange(data, 0, middle));
-        }
-
-        if ( result != -1 ) {
-            return middle + result;
+            return chop(searchingFor, Arrays.copyOfRange(data, 0, middle));
         }
         return -1;
-
     }
 
     private boolean thisIsNotTheNumberYoureLookingFor(int searchingFor, int[] data) {
