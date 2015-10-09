@@ -13,7 +13,7 @@ public class BinaryChopTest {
     }
 
     @Test
-    public void uberTest() {
+public void uberTest() {
         assertThat(binaryChop.chop(3, new int[]{})).isEqualTo(-1);
         assertThat(binaryChop.chop(3, new int[]{1})).isEqualTo(-1);
         assertThat(binaryChop.chop(1, new int[]{1})).isEqualTo(0);
