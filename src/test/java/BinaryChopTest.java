@@ -13,6 +13,27 @@ public class BinaryChopTest {
     }
 
     @Test
+    public void shouldReturnMinus1ForEmptyArray() throws Exception {
+        assertThat(binaryChop.chop(3, new int[]{})).isEqualTo(-1);
+    }
+    @Test
+    public void shouldReturcorrectPositionForListOf1() throws Exception {
+        assertThat(binaryChop.chop(1, new int[]{1})).isEqualTo(0);
+    }
+
+
+    @Test
+    public void shouldReturnMinus1IfArrayDoesntContainValue() throws Exception {
+        assertThat(binaryChop.chop(3, new int[]{1})).isEqualTo(-1);
+    }
+
+    @Test
+    public void shouldReturnCorrectIndexFromAnArrayOfMultipleValues(){
+        assertThat(binaryChop.chop(3, new int[]{1, 3, 5})).isEqualTo(1);
+    }
+
+
+    @Test
     public void uberTest() {
         assertThat(binaryChop.chop(3, new int[]{})).isEqualTo(-1);
         assertThat(binaryChop.chop(3, new int[]{1})).isEqualTo(-1);
