@@ -1,11 +1,21 @@
-import java.util.Collection;
+class BinaryChop {
+    int chop(int searchingFor, int[] data) {
 
-public class BinaryChop {
-    public int chop(int searchingFor, int[] data) {
+        int start = 0;
+        int mid;
+        int end = data.length - 1;
 
-        for(int i = 0; i < data.length; i++){
-            if(data[i] == searchingFor){
-                return i;
+        while(start<=end){
+            mid = (start + end)/2;
+
+            if(data[mid]==searchingFor){
+                return mid;
+            }
+
+            if(searchingFor<data[mid]){
+                end=mid-1;
+            } else {
+                start=mid+1;
             }
         }
 
