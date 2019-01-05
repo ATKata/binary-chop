@@ -1,8 +1,5 @@
 import java.util.Arrays;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 public class BinaryChop {
     public int chop(int searchingFor, int[] data) {
 
@@ -31,9 +28,5 @@ public class BinaryChop {
             return chop(searchingFor, Arrays.copyOfRange(data, 0, middle));
         }
         return -1;
-    }
-
-    private boolean thisIsNotTheNumberYoureLookingFor(int searchingFor, int[] data) {
-        return data.length == 1 & data[0] != searchingFor;
     }
 }
